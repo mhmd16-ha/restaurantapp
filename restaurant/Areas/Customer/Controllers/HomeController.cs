@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace restaurant.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

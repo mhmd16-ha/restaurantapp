@@ -6,8 +6,9 @@
     <title>@ViewData["Title"] - restaurant</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
-<body>
+<body class="bgImage">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
@@ -30,7 +31,7 @@
                                 Contant Management
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Category</a>
+                                <a class="dropdown-item" asp-action="Index" asp-controller="Categories" asp-area="Admin">Category</a>
                                 <a class="dropdown-item" href="#">Sub Category</a>
                                 <a class="dropdown-item" href="#">Coupons</a>
                                 <a class="dropdown-item" href="#">Menu Item</a>

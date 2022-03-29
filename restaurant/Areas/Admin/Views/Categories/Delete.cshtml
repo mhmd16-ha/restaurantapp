@@ -1,0 +1,24 @@
+﻿
+@model Category
+
+<h1 class="text-info">Delete Category</h1>
+<form asp-action="Delete" method="post">
+    <div class="whitebg border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @Html.HiddenFor(m => m.Id)
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Name" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Name" readonly class="form-control" />
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-5  offset-2">
+                <partial name="_Delete_TwoButtom_update" />
+            </div>
+        </div>
+    </div>
+</form>

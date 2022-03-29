@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using restaurant.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,6 @@ namespace restaurant.Data
             : base(options)
         {
         }
+        public DbSet<Category> Categories { get; set; }
     }
 }

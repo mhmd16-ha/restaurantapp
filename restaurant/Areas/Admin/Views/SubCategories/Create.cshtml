@@ -1,0 +1,56 @@
+﻿@model SubCategoryAndCategoryModelView;
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-info">Create Sub Category</h1>
+<partial name="_StatusMessage" model="Model.StutusMessage"/>
+<div class="whitebg border row">
+    <div class="col-8 border-right">
+        <form asp-action="Create" method="post">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="SubCategory.Category.Name" class="col-form-label"></label>
+                </div>
+                <div class="col-5">
+                    <select class="form-control" id="DdCategories" asp-for="SubCategory.CategoryId" asp-items="@(new SelectList(Model.CategoryList,"Id","Name"))"></select>
+                    <span class="text-danger" asp-validation-for="SubCategory.Name"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label asp-for="SubCategory.Name" class="col-form-label"></label>
+                </div>
+                <div class="col-5">
+                    <input asp-for="SubCategory.Name" class="form-control" />
+                    <span class="text-danger" asp-validation-for="SubCategory.Name"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-5  offset-3">
+                    <partial name="_TwoButtom" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-3 offset-1">
+        @if (Model.SubCategoryList.Count() > 0) { 
+            <p>Existing Sub Categories : </p>
+            <div id="divSubCategoriesList">
+
+            </div>
+        
+        }
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+<script>
+
+
+</script>
